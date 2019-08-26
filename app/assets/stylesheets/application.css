@@ -13,3 +13,586 @@
  *= require_tree .
  *= require_self
  */
+ * {
+         margin: 0px;
+     }
+
+ body {
+   font-family: Verdana, sans-serif;
+   background-image: linear-gradient(rgb(179, 179, 176, 1) 1%,
+     rgb(227, 226, 221) 16%);
+ }
+
+ .outer_body {
+   text-align: center;
+   justify-content: center;
+   display: flex;
+   background: url(https://i.ytimg.com/vi/yOKqsdWAJFA/maxresdefault.jpg) center center fixed;
+ }
+
+ .inner_body {
+   position: relative;
+   padding-bottom: 30px;
+   width: 1008px;
+   box-shadow: 0 0 100px hsl(50, 100%, 50%);
+   min-height: 800px;
+   color: white;
+   background: url(https://i.ytimg.com/vi/yOKqsdWAJFA/maxresdefault.jpg) center center fixed;
+   background-size: cover;
+ }
+
+ .alert {
+   background-color: #fff;
+   color: red;
+   padding: 3px 3px;
+   border: 1px solid red;
+ }
+
+ .notice {
+   background-color: #fff;
+   color: green;
+   padding: 3px 3px;
+   border: 1px solid green;
+ }
+
+ .retry {
+   background-color: #fff;
+   color: rgb(250, 199, 0);
+   padding: 3px 3px;
+   border: 1px solid rgb(250, 199, 0);
+ }
+
+.headerbar {
+  display: flex;
+  justify-content:flex-start;
+  padding: 20px;
+  background-image: linear-gradient(black 5%, rgb(51, 51, 51, 0) 30%);
+  position: fixed;
+  width: 968px;
+  z-index: 1;
+}
+
+.headeritem {
+  margin: -1px;
+  vertical-align: middle;
+}
+
+.headerbar a {
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid hsla(60, 50%, 80%, 20%);
+  background-color: hsla(60, 50%, 20%, 20%);
+}
+
+.headerbar a:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(250, 199, 0);
+  background-image: linear-gradient(rgb(46, 46, 46), rgb(79, 79, 79), rgb(46, 46, 46));
+  cursor: pointer;
+}
+
+.headerbar a:active {
+  text-decoration: none;
+  font-weight: lighter;
+  background-color: hsla(240, 80%, 80%, 20%);
+}
+
+img.headeritem {
+  height: 50px;
+}
+
+div.yield {
+  padding-top: 88px;
+}
+
+.homepage_text {
+  padding: 40px;
+}
+
+.homepage_text span {
+  text-decoration: underline;
+  text-decoration-color: rgba(250, 199, 0);
+}
+
+iframe {
+  outline: 3px double rgb(250, 199, 0);
+  box-shadow: -5px 5px 2px 8px rgba(250, 199, 0, 0.2),
+              5px 5px 2px 8px rgba(250, 199, 0, 0.2),
+              5px -5px 2px 8px rgba(250, 199, 0, 0.2),
+              -5px -5px 2px 8px rgba(250, 199, 0, 0.2);
+}
+
+input.searchbar {
+  border: none;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #fff;
+  width: 50%;
+  font-size: 21px;
+  padding: 10px 8px;
+  vertical-align: middle;
+}
+
+input.searchbar:focus {
+  outline: 0;
+}
+
+input.searchbar:hover {
+  box-shadow: 0 0 4px hsl(0, 0%, 75%);
+  cursor: pointer;
+}
+
+input.searchbar[type=text] {
+  padding-left: 24px;
+}
+
+button.searchbutton {
+  vertical-align: middle;
+  border: none;
+  background-color: rgb(250, 199, 0);
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 9px;
+  padding-right: 16px;
+  margin-left: -5px;
+}
+
+button.searchbutton:hover {
+  background-color: rgb(250, 199, 0);
+  box-shadow: 0 0 4px hsl(0, 0%, 75%);
+  cursor: pointer;
+}
+
+button.searchbutton:focus {
+  outline: 0;
+  background-color: rgb(255, 225, 135);
+  outline-color: rgb(250, 199, 0);
+}
+
+img.magnifier {
+    height: 24px;
+    width: 24px;
+}
+
+/* MOVIE SHOW PAGE */
+
+img.mymove {
+  height: 350px;
+}
+
+.mymove {
+  position: relative;
+  animation: mymove 3s infinite;
+}
+
+@keyframes mymove {
+    0%   {border: 3px solid rgb(250, 199, 0);}
+    9%   {border: 3px solid rgb(250, 199, 50);}
+    18%  {border: 3px solid rgb(250, 199, 100);}
+    27%  {border: 3px solid rgb(250, 199, 150);}
+    36%  {border: 3px solid rgb(250, 199, 200);}
+    45%  {border: 3px solid rgb(250, 225, 225);}
+    54%  {border: 3px solid rgb(255, 255, 255);}
+    63%  {border: 3px solid rgb(250, 225, 225);}
+    73%  {border: 3px solid rgb(250, 199, 200);}
+    82%  {border: 3px solid rgb(250, 199, 150);}
+    91%  {border: 3px solid rgb(250, 199, 100);}
+    100% {border: 3px solid rgb(250, 199, 50);}
+}
+
+/* COMPARISONS PAGE */
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input.movie_2 {
+  color:red;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgb(219, 176, 2);
+  padding: 8px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(50, 115, 220, 0.3);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content span:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: rgb(250, 199, 0);}
+
+#comparison_header {
+  text-align: center;
+}
+
+#new_comparison {
+  text-align: center;
+}
+
+/* USER INDEX PAGE LINKS -- to individual show pages. */
+.user_link {
+  border-bottom: 1px solid rgb(250, 199, 0);
+}
+
+.user_link a {
+  color: white;
+  text-decoration: none;
+}
+
+/* USER SHOW PAGE LINKS, same as header */
+.user_links {
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid hsla(60, 50%, 80%, 20%);
+  background-color: hsla(60, 50%, 20%, 20%);
+}
+
+.user_links:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(250, 199, 0);
+  background-image: linear-gradient(rgb(46, 46, 46), rgb(79, 79, 79), rgb(46, 46, 46));
+  cursor: pointer;
+}
+
+.user_links:active {
+  text-decoration: none;
+  font-weight: lighter;
+  background-color: hsla(240, 80%, 80%, 20%);
+}
+
+input.user_links a {
+  font-size: 18px;
+}
+
+.new_user a {
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid hsla(60, 50%, 80%, 20%);
+  background-color: hsla(60, 50%, 20%, 20%);
+  margin-bottom: 20px;
+}
+
+.new_user a:hover {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(250, 199, 0);
+  background-image: linear-gradient(rgb(46, 46, 46), rgb(79, 79, 79), rgb(46, 46, 46));
+  cursor: pointer;
+}
+
+.new_user a:active {
+  text-decoration: none;
+  font-weight: lighter;
+  background-color: hsla(240, 80%, 80%, 20%);
+}
+
+input.new_user_form {
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 30%;
+  font-size: 21px;
+  padding: 10px 8px;
+  vertical-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input.new_user_form:focus {
+  outline: 0;
+}
+
+input.new_user_form:hover {
+  box-shadow: 0 0 4px hsl(0, 0%, 75%);
+  cursor: pointer;
+}
+
+input.new_user_form[type=text] {
+  padding-left: 24px;
+}
+
+textarea.new_user_form {
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 40%;
+  font-size: 21px;
+  padding: 10px 8px;
+  vertical-align: middle;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+textarea.new_user_form:focus {
+  outline: 0;
+}
+
+textarea.new_user_form:hover {
+  box-shadow: 0 0 4px hsl(0, 0%, 75%);
+  cursor: pointer;
+}
+
+textarea.new_user_form[type=text] {
+  padding-left: 24px;
+}
+
+
+/* FAVORITES GRID VIEW */
+.favorites_row {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 0;
+  margin-left: 6px;
+}
+
+.favorites_column {
+  width: 242px;
+  height: 350px;
+  vertical-align: middle;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.favorites_link_wrapper{
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.favorites_link_wrapper a {
+  color: white;
+  font-size: 12px;
+  text-decoration: underline;
+  text-decoration-color: rgb(250, 199, 0);
+}
+
+/* FAVORITES FLIP CARD */
+/* The flip card container. */
+.flip-card {
+  width: 242px;
+  height: 350px;
+  perspective: 1000px; /* provides 3D effect */
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* Container within container for positioning. */
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Small transform on image hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(10deg);
+}
+
+/* Display the flip backside on hover*/
+.flip-card:hover .flip-card-back {
+  visibility: visible;
+}
+
+/* Position the front and back side   */
+.flip-card-front, .flip-card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Front side style if image absent*/
+.flip-card-front {
+  background-image: linear-gradient(rgb(42, 42, 42), #fff, rgb(42, 42, 42));
+  color: white;
+}
+
+/* Back side style */
+.flip-card-back {
+  background-color: rgb(0, 0, 0, .7);
+  color: white;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(250, 199, 0)
+}
+
+/* delete favorite from user show page */
+.favorites_link_wrapper form input {
+  padding: 4px;
+  color: white;
+  background-color: rgb(42, 42, 42, 0.5);
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+input.add_to_favorites {
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid hsla(60, 50%, 80%, 20%);
+    background-color: hsla(60, 50%, 20%, 20%);
+  }
+
+input.add_to_favorites:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(250, 199, 0);
+    background-image: linear-gradient(rgb(46, 46, 46), rgb(79, 79, 79), rgb(46, 46, 46));
+    cursor: pointer;
+  }
+
+input.add_to_favorites:active {
+    text-decoration: none;
+    font-weight: lighter;
+    background-color: hsla(240, 80%, 80%, 20%);
+  }
+
+/* .favorites_link_wrapper form input:hover {
+  background-color: rgb(42, 42, 42)
+  border: 2px solid rgb(250, 199, 0)
+} */
+
+table {
+  margin: auto;
+}
+
+.comparison_table {
+  padding-right: 30px;
+}
+
+td {
+  height: 30px;
+  width: 200px;
+}
+
+td a {
+  color: rgb(250, 199, 0)
+}
+
+td a:hover {
+  text-decoration: underline;
+}
+
+td.line {
+  opacity: 0.3;
+}
+
+th {
+  width: 200px;
+  font-size: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted rgb(250, 199, 0);
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: rgb(242, 242, 242);
+  color: black;
+  text-align: center;
+  border-color: 3px solid rgb(250, 199, 0);
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+div.show_movie_basics {
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 40px;
+    margin-right: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 75px;
+}
+
+span.year_display {
+  font-size: 14px;
+}
+
+.production_notes {
+  margin-left: 30px;
+}
+
+.ratings {
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.people {
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.miscellaneous {
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
