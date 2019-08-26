@@ -1,0 +1,15 @@
+<br><br>
+
+<h2>Get in here, kid</h2><br><br>
+
+
+<%= form_for @user do |f|%>
+
+  <label class="user_link" for="user_name">Name</label><br>
+  <input autocomplete="off" class="new_user_form" type="text" name="user[name]" id="user_name"><br>
+
+  <label class="user_link" for="user_movie_quote">Movie Quote</label><br>
+  <textarea class="new_user_form" name="user[movie_quote]" id="user_movie_quote"></textarea><br>
+
+  <input class="user_links" type="submit" name="commit" value="Party On Garth" ><br>
+<% end %>

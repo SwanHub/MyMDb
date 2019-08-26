@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyMDbHeroku</title>
+    <title>MyMDb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,37 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="outer_body">
+      <div class="inner_body">
+
+        <!-- header w logo-->
+        <div class="headerbar">
+          <header>
+            <img class="headeritem" src="https://user-images.githubusercontent.com/47403119/63199164-3c129e00-c03a-11e9-9d7d-8a39dcb77256.png" alt="MyMDb logo">
+
+            <%= link_to "Home", home_path, class: "headeritem"%>
+            <%= link_to "Users", users_path, class: "headeritem"%>
+            <%= link_to "Search", movies_path, class: "headeritem"%>
+            <%= link_to "Favorites", favorites_path, class: "headeritem"%>
+            <%= link_to "Comparisons", comparisons_path, class: "headeritem"%>
+          </header>
+        </div>
+
+        <!-- views general -->
+        <div class="yield">
+          <!-- flash messages on redirects -->
+          <% if flash[:notice]%>
+            <div class="notice"><%= flash[:notice] %></div>
+          <% elsif flash[:alert]%>
+            <div class="alert"><%= flash[:alert] %></div>
+          <% elsif flash[:retry]%>
+            <div class="retry"><%= flash[:retry] %></div>
+          <% end %>
+
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

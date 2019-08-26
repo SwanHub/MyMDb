@@ -1,0 +1,27 @@
+class FavoritesController < ApplicationController
+
+    def index
+        @favorites = Favorite.all
+    end
+
+    def show
+        @favorite = Favorite.find(params[:id])
+    end
+
+    def create
+        @user = User.find(params["user"]["id"])
+        @favorite = Favorite.new(user_id: @user.id, movie_id: params["movie"]["id"])
+        if @favorite.save
+          redirect_to user_path(@user), flash: {notice: "You added #{Movie.find(params["movie"]["id"]).title} to favorites!"}
+        else
+          redirect_to user_search_path(@user), flash: {alert: "No repeat favorites."}
+        end
+    end
+
+    def destroy
+        @user = User.find(params[:user_id])
+        Favorite.delete(params[:id])
+        redirect_to user_path(@user)
+    end
+
+end

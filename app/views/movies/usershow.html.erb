@@ -1,0 +1,54 @@
+<br><%= form_for @favorite do |f|%>
+  <input type="hidden" name="user[id]" value="<%=@user.id%>">
+  <input type="hidden" name="movie[id]" value="<%=@movie.id%>">
+  <input class="add_to_favorites" type="submit" name="commit" value="Add to <%=@user.name%>'s Favorites">
+<% end %>
+
+<div class="show_movie_basics">
+  <p>
+    <img class="mymove" src="<%=@movie.poster_url%>" alt="poster for <%=@movie.title%>">
+  </p><br><br>
+
+  <div class="production_notes">
+    <em><h2><%=@movie.title%> <span class="year_display">(<%=@movie.year%>)</span></h2></em><br>
+    <label>Rated: </label><p><%=@movie.rated%></p><br>
+    <label>Runtime: </label><p><%=@movie.runtime%></p><br>
+    <label>Genre(s): </label><p><%=@movie.genre%></p><br>
+    <label>Plot: </label><p><%=@movie.plot%></p><br>
+  </div>
+</div><br>
+<span>__________________________________</span><br><br>
+<span>Ratings</span>
+
+<div class="show_movie_extras">
+  <div class="ratings">
+    <label>IMDb: </label><p><%=@movie.imdbRating%></p><br>
+    <label>Metascore: </label><p><%=@movie.metascore%></p><br>
+    <label>Rotten Tomatoes: </label><p><%=@movie.rotten_tomatoes%></p><br>
+    <label>IMDb Votes: </label><p><%=@movie.imdbVotes%></p><br>
+  </div>
+
+  <span>__________________________________</span><br><br>
+  <span>People</span>
+
+  <div class="people">
+    <label>Director(s): </label><p><%=@movie.director%></p><br>
+    <label>Writer(s): </label><p><%=@movie.writer%></p><br>
+    <label>Actor(s): </label><p><%=@movie.actors%></p><br>
+  </div>
+
+  <span>__________________________________</span><br><br>
+  <span>Miscellaneous</span>
+
+  <div class="miscellaneous">
+    <label>Released: </label><p><%=@movie.released%></p><br>
+    <label>Production Companies: </label><p><%=@movie.production_companies%></p><br>
+    <label>Awards: </label><p><%=@movie.awards%></p><br>
+    <label>Language: </label><p><%=@movie.language%></p><br>
+    <label>Country: </label><p><%=@movie.country%></p><br>
+    <label>Media type: </label><p><%=@movie.media_type%></p><br>
+    <label>IMDb ID: </label><p><%=@movie.imdbID%></p><br>
+    <a href="<%=@movie.website_url %>">Website</a><br>
+  </div>
+
+</div>

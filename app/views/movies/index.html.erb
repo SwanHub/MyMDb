@@ -1,0 +1,18 @@
+<br><br>
+<h2>Search Movies</h2>
+
+<br><br><br><br>
+<%= form_tag("/search", method: "get") do %>
+        <input autocomplete="off" class="searchbar" type="text" name="movie_name">
+        <button class="searchbutton" type="submit">
+            <img class="magnifier" src="https://icon-library.net/images/magnifier-icon-png/magnifier-icon-png-21.jpg" alt="magnifier">
+        </button>
+    <% end %>
+
+<br><br><br><br>
+<span>___________________</span><br><br>
+
+<h3>Total Movies: <%= @stats.total_movies%></h3><br>
+<h3>Total Votes: <%= @stats.total_votes%></h3><br>
+<h3>Average Rating Per Movie: <%= @stats.avg_rating_per_movie%></h3><br>
+<h3>Average Votes Per Movie: <%= @stats.avg_votes_per_movie%></h3><br>

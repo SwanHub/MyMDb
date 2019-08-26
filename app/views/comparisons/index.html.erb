@@ -1,0 +1,25 @@
+<br><br><h2>All Comparisons</h2>
+<em>Triple join table, movies and users</em><br><br><br>
+
+<br>
+
+  <table class="comparison_table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Superior</th>
+        <th>Inferior</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @comparisons.each do |comparison| %>
+      <tr>
+        <td><%=link_to comparison.user.name, user_path(comparison.user)%></td>
+        <td><%=link_to comparison.superior.title, movie_path(comparison.superior)%></td>
+        <td><%=link_to comparison.inferior.title, movie_path(comparison.inferior)%></td>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>

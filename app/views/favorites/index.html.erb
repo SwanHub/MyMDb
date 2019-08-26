@@ -1,0 +1,26 @@
+<br><br><h2>Favorites</h2>
+<em>Join table between movies and users</em><br><br><br>
+
+<h4 class="tooltip">Most Favorited Movie:
+  <span class="tooltiptext"><%=@favorites.most_favorite_movie_title %> (<%=@favorites.most_favorite_movie_count%>)</span> <br>
+</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th></th>
+      <th>Movie</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorites.each do |favorite|%>
+    <tr>
+      <td><%= link_to favorite.user.name, user_path(favorite.user)%></td>
+      <td class="line">______________</td>
+      <td><%= link_to favorite.movie.title, movie_path(favorite.movie)%></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
