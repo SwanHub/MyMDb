@@ -24,8 +24,8 @@
               <%= link_to "Comparisons", comparisons_path, class: "headeritem"%>
               <small><%= link_to "Log Out, #{current_user.name}", logout_path, class: "headeritem"%></small>
             <% else %>
-              <%= link_to "Sign Up", signup_path%>
-              <%= link_to "Log In", login_path%>
+              <%= link_to "Sign Up", signup_path, class: "headeritem"%>
+              <%= link_to "Log In", login_path, class: "headeritem"%>
             <% end %>
           </header>
         </div>
