@@ -13,3 +13,19 @@
 
   <input class="user_links" type="submit" name="commit" value="Party On Garth" ><br>
 <% end %>
+
+
+<%= form_for @user do |f|%>
+
+  <h3><%=f.label :name %></h3>
+  <%=f.text_field :name %><br>
+
+  <h3><%=f.label :password %></h3>
+  <%= f.password_field :password%><br>
+
+  <h3><%=f.label :password_confirmation %></h3>
+  <%=f.password_field :password_confirmation %><br>
+
+  <input class="user_links" type="submit" name="commit" value="Create User" data-disable-with="Create User">
+
+<% end %>

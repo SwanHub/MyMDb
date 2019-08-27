@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#home'
 
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:show, :new, :create]
   get '/home', to: 'users#home', as: 'home'
-  get '/', to: 'users#home'
+  root 'users#home'
   get '/users/comparison/:id', to: 'users#comparison', as: 'comparison'
   get '/users/search/:id', to: 'users#search', as: 'user_search'
 
@@ -18,4 +18,10 @@ Rails.application.routes.draw do
 
   ## favorites routes
   resources :favorites, only: [:index, :create, :destroy]
+
+  ## bcrypt - related routes
+  get '/signup', to: "users#new"
+  get '/login', to: "sessions#new"
+  post '/login', to: "sessions#create"
+  get '/logout', to: "sessions#destroy"
 end

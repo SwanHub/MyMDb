@@ -2,6 +2,7 @@ class User < ApplicationRecord
     has_many :comparisons
     has_many :favorites
     has_many :movies, through: :favorites
+    has_secure_password
 
     def find_favorite(movie)
         self.favorites.find_by(movie_id: movie.id)
@@ -87,7 +88,7 @@ class User < ApplicationRecord
 
         # potential helper method:
         # total_votes = sorted.reduce(0){|sum, movie| sum += movie.imdbVotes}
-        # average_votes = total_votes / sorted.count 
+        # average_votes = total_votes / sorted.count
 
     end
 

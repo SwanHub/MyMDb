@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-   def index
-      @users = User.all
-   end
-
    def show
       @user = User.find(params[:id])
    end
@@ -13,12 +9,12 @@ class UsersController < ApplicationController
    end
 
    def create
-      @user = User.new(name: params[:user][:name], movie_quote: params[:user][:movie_quote])
+      @user = User.new(user_params)
 
       if @user.save
-        flash[:notice]
-        redirect_to user_path(@user), flash: {notice: "Welcome #{@user.name}! Start adding to your favorites!"}
+        redirect_to login_path, flash: {notice: "Welcome #{@user.name}! Log in to start adding favorites!"}
       else
+        flash[:alert] = "Username has been claimed."
         render :new
       end
    end
@@ -41,6 +37,12 @@ class UsersController < ApplicationController
    end
 
    def home
+   end
+
+   private
+
+   def user_params
+      params.require(:user).permit(:name, :password)
    end
 
    # if we create a destroy method, include destroying all relevant comparisons... / favorites.

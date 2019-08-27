@@ -1,0 +1,13 @@
+<h1>Log In!</h1>
+
+<%= form_tag login_path do %>
+
+  <h3><%= label_tag :name%></h3>
+  <%= text_field_tag :name%>
+
+  <h3><%= label_tag :password %></h3>
+  <%= password_field_tag :password%><br>
+
+  <input style="margin-top:10px;" class="" type="submit" name="commit" value="Log In!" data-disable-with="Log In!">
+
+<% end %>
