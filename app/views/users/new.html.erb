@@ -2,30 +2,17 @@
 
 <h2>Get in here, kid</h2><br><br>
 
-
 <%= form_for @user do |f|%>
 
   <label class="user_link" for="user_name">Name</label><br>
-  <input autocomplete="off" class="new_user_form" type="text" name="user[name]" id="user_name"><br>
+  <input autocomplete="off" class="new_user_form" type="text" name="user[name]"><br>
 
-  <label class="user_link" for="user_movie_quote">Movie Quote</label><br>
-  <textarea class="new_user_form" name="user[movie_quote]" id="user_movie_quote"></textarea><br>
+  <label class="user_link" for="user_password">Password</label><br>
+  <input class="new_user_form" type="password" name="user[password]" id="user_password"><br>
 
-  <input class="user_links" type="submit" name="commit" value="Party On Garth" ><br>
-<% end %>
+  <label class="user_link" for="user_password_confirmation">Confirm</label><br>
+  <input class="new_user_form" type="password" name="user[password_confirmation]" id="user_password_confirmation"><br>
 
-
-<%= form_for @user do |f|%>
-
-  <h3><%=f.label :name %></h3>
-  <%=f.text_field :name %><br>
-
-  <h3><%=f.label :password %></h3>
-  <%= f.password_field :password%><br>
-
-  <h3><%=f.label :password_confirmation %></h3>
-  <%=f.password_field :password_confirmation %><br>
-
-  <input class="user_links" type="submit" name="commit" value="Create User" data-disable-with="Create User">
+  <input class="user_links" type="submit" name="commit" value="Party on, Garth" data-disable-with="Party on, Garth">
 
 <% end %>

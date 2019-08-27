@@ -1,13 +1,13 @@
-<h1>Log In!</h1>
+<br><br><h1>Log In!</h1><br><br>
 
 <%= form_tag login_path do %>
 
-  <h3><%= label_tag :name%></h3>
-  <%= text_field_tag :name%>
+  <label class="user_link" for="name">Name</label><br>
+  <input autocomplete="off" class="new_user_form" type="text" name="name" id="name"><br>
 
-  <h3><%= label_tag :password %></h3>
-  <%= password_field_tag :password%><br>
+  <label class="user_link" for="password">Password</label><br>
+  <input class="new_user_form" type="password" name="password" id="password"><br>
 
-  <input style="margin-top:10px;" class="" type="submit" name="commit" value="Log In!" data-disable-with="Log In!">
+  <input class="user_links" type="submit" name="commit" value="Log In!" data-disable-with="Log In!">
 
 <% end %>
