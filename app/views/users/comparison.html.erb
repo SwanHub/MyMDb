@@ -5,47 +5,30 @@
 
 <div class="container">
 
-  <div class="dropdown">
-    <button class="dropbtn"><img src="<%= @movie_1.poster_url%>" alt="<%=@movie_1.title%>"></button>
-    <div class="dropdown-content">
-      <span>Title: <%=@movie_1.title%></span>
-      <span>Released: <%=@movie_1.released%></span>
-      <span>IMDb Rating: <%=@movie_1.imdbRating%></span>
-      <span>Votes: <%=@movie_1.imdbVotes%></span>
-      <span>Genre(s): <%=@movie_1.genre%></span>
-      <span>Dir: <%=@movie_1.director%></span>
-      <span>Plot: <%=@movie_1.plot%></span>
-    </div>
-  </div>
+  <%=form_for @comparison do |f|%>
 
-  <%= form_for @comparison do |f|%>
-      <input type="hidden" name="user[id]" value="<%=@user.id%>">
-      <div>
-          <input type="hidden" name="inferior_id" value="<%=@movie_2.id%>">
-          <input type="radio" id="movie_1" name="superior_id" value="<%=@movie_1.id%>"
-                 checked>
-          <label for="movie_1">Left</label>
-      </div>
-      <div>
-          <input type="hidden" name="inferior_id" value="<%=@movie_1.id%>">
-          <input type="radio" id="movie_2" name="superior_id" value="<%=@movie_2.id%>">
-          <label for="movie_2">Right</label>
-      </div>
-      <%= f.submit "I'm sure."%>
+        <div class="comparison_click">
+          <button class="dropbtn"><img src="<%= @movie_1.poster_url%>" alt="<%=@movie_1.title%>"></button>
+          <div class="dropdown-content">
+            <input type="hidden" name="superior[id]" value="<%= @movie_1.id %>">
+            <input type="hidden" name="inferior[id]" value="<%= @movie_2.id %>">
+            <%= f.submit "#{@movie_1.title}", class: "dropbtn" %>
+          </div>
+        </div>
+
   <% end %>
 
-  <div class="dropdown">
-    <button class="dropbtn"><img src="<%= @movie_2.poster_url%>" alt="<%=@movie_2.title%>"></button>
-    <div class="dropdown-content">
-      <span>Title: <%=@movie_2.title%></span>
-      <span>Released: <%=@movie_2.year%></span>
-      <span>IMDb Rating: <%=@movie_2.imdbRating%></span>
-      <span>Votes: <%=@movie_2.imdbVotes%></span>
-      <span>Genre(s): <%=@movie_2.genre%></span>
-      <span>Dir: <%=@movie_2.director%></span>
-      <span>Plot: <%=@movie_2.plot%></span>
-    </div>
-  </div>
+  <%=form_for @comparison do |f|%>
 
+        <div class="comparison_click">
+          <button class="dropbtn"><img src="<%= @movie_2.poster_url%>" alt="<%=@movie_2.title%>"></button>
+          <div class="dropdown-content">
+            <input type="hidden" name="superior[id]" value="<%= @movie_2.id %>">
+            <input type="hidden" name="inferior[id]" value="<%= @movie_1.id %>">
+            <%= f.submit "#{@movie_2.title}", class: "dropbtn" %>
+          </div>
+        </div>
+
+  <% end %>
 
 </div>

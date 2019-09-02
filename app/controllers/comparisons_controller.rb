@@ -5,8 +5,8 @@ class ComparisonsController < ApplicationController
     end
 
     def create
-        Comparison.create(user_id: params["user"]["id"], inferior_id: params["inferior_id"], superior_id: params["superior_id"])
-        redirect_to users_path
+        Comparison.create(user_id: current_user.id, inferior_id: params[:inferior][:id], superior_id: params[:superior][:id])
+        redirect_to comparison_path(current_user)
     end
 
 end

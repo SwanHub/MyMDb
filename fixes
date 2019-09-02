@@ -1,0 +1,20 @@
+Bugs We Found Today
+
+  - If a User doesn't have any previous comparisons, the comparison path breaks.
+        Create an if/else statement in the Comparison / Users Controller to account for new users.
+
+  - The styling of "Movie Information" is terrible.
+        Create an event listener on those sections for a user to hide or display that data.
+  - We don't need a specific "Add to Favorites" page anymore. Current_user takes care of that.
+        Remove "Add Favorites" Route
+        Include "Add Favorites" button in "Search Movies" path.
+        Use "Current_user" instead of the foisted "@user" instance...
+        Change "No Repeat favorites." To something more fun.
+  - Give Credit to OMDb at the base of the page.
+        Make sure height of page is always at least the size of the window.
+        Make sure height of page is dynamic.
+        Include at the base of the page in <small> footer tag, "Data seeded via [OMDb.com]"
+  - Make the comparisons buttons instead of the "left and right" radio buttons.
+
+Recommendation Function:
+  -

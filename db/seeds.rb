@@ -6,7 +6,7 @@
 #
 # csv.each do |imdb_id|
 #
-#     response = RestClient.get("http://www.omdbapi.com/?apikey=7c5312b1&i=#{imdb_id[0]}")
+#     response = RestClient.get("http://www.omdbapi.com/?apikey=YOUR KEY HERE=#{imdb_id[0]}")
 #     json = JSON.parse(response)
 #     votes = json["imdbVotes"].delete(",").to_i
 #
