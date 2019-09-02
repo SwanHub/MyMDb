@@ -2,10 +2,12 @@
 <h1><%=@user.name%>'s Favorites</h1>
 <br><br>
 
-<header>
-  <%= link_to "Add Favorites", user_search_path, class: "user_links"%>
-  <%= link_to "Compare Movies", comparison_path(@user), class: "user_links"%>
-</header>
+<% if current_user.id == @user.id %>
+  <header>
+    <%= link_to "Add Favorites", user_search_path, class: "user_links"%>
+    <%= link_to "Compare Movies", comparison_path(@user), class: "user_links"%>
+  </header>
+<% end %>
 
 <br><br>
 
@@ -27,13 +29,16 @@
             <div class="favorites_link_wrapper">
               <%= link_to "More details", movie_path(movie), class: "favorites_link"%>
 
-              <form class="delete_favorite_button" method="post" action="/favorites/<%= @user.find_favorite(movie).id%>" >
-                <input type="hidden" name="_method" value="delete">
-                <input type="hidden" name="user_id" value="<%=@user.id%>">
-                <input type="submit" value="remove">
-                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              </form>
-              </div>
+              <% if current_user.id == @user.id %>
+                  <form class="delete_favorite_button" method="post" action="/favorites/<%= @user.find_favorite(movie).id%>" >
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="user_id" value="<%=@user.id%>">
+                    <input type="submit" value="remove">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                  </form>
+              <% end %>
+
+            </div>
 
         </div>
       </div>
