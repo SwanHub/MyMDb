@@ -1,7 +1,14 @@
 class User < ApplicationRecord
+    # accessing the triple join
     has_many :comparisons
+    has_many :inferiors, through: :comparisons
+    has_many :superiors, through: :comparisons
+
+    # accessing movies directly through favorites many-to-many join
     has_many :favorites
     has_many :movies, through: :favorites
+
+    # bcrypt method for authorization (logging in)
     has_secure_password
 
     def find_favorite(movie)

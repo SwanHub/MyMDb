@@ -18,14 +18,14 @@
           <header>
             <img class="headeritem" src="https://user-images.githubusercontent.com/47403119/63199164-3c129e00-c03a-11e9-9d7d-8a39dcb77256.png" alt="MyMDb logo">
             <% if current_user %>
-              <%= link_to "Home", home_path, class: "headeritem"%>
-              <%= link_to "Search", movies_path, class: "headeritem"%>
+              <%= link_to "My Profile", user_path(current_user), class: "headeritem"%>
+              <%= link_to "Search Movies", movies_path, class: "headeritem"%>
               <%= link_to "Favorites", favorites_path, class: "headeritem"%>
               <%= link_to "Comparisons", comparisons_path, class: "headeritem"%>
               <small><%= link_to "Log Out, #{current_user.name}", logout_path, class: "headeritem"%></small>
-            <% else %>
-              <%= link_to "Create User", signup_path, class: "headeritem"%>
-              <%= link_to "Log In", login_path, class: "headeritem"%>
+              <% else %>
+                <%= link_to "Create User", signup_path, class: "headeritem"%>
+                <%= link_to "Log In", login_path, class: "headeritem"%>
             <% end %>
           </header>
         </div>

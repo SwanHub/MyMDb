@@ -19,15 +19,14 @@
 
  body {
    font-family: Verdana, sans-serif;
-   background-image: linear-gradient(rgba(179, 179, 176, 1) 1%,
-     rgb(227, 226, 221) 16%);
+   background-color: black;
  }
 
  .outer_body {
    text-align: center;
    justify-content: center;
    display: flex;
-   background: url(https://i.ytimg.com/vi/yOKqsdWAJFA/maxresdefault.jpg) center center fixed;
+   background-color: black;
  }
 
  .inner_body {
@@ -35,10 +34,10 @@
    padding-bottom: 30px;
    width: 1008px;
    box-shadow: 0 0 100px hsl(50, 100%, 50%);
-   min-height: 800px;
    color: white;
+   height: 100vh;
    background: url(https://i.ytimg.com/vi/yOKqsdWAJFA/maxresdefault.jpg) center center fixed;
-   background-size: cover;
+   background-size:auto;
  }
 
  .alert {
