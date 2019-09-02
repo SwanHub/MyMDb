@@ -25,15 +25,28 @@ class UsersController < ApplicationController
    end
 
    def comparison
-      # helper methods for variables below.
-      reigning_champ = Movie.find(Comparison.last.superior_id)
-      @user = User.find(params[:id])
-      relevant_movies = @user.relevant_movie_range
+      @user = current_user
 
-      # variables used in view.
-      @movie_1 = reigning_champ
-      @movie_2 = relevant_movies.sample
-      @comparison = Comparison.new
+      if @user.favorites.count > 0
+
+          # if the user has created comparisons... get the reigning champ
+          if @user.comparisons.count > 0
+              # helper methods for variables below.
+              reigning_champ = Movie.find(Comparison.last.superior_id)
+              relevant_movies = @user.relevant_movie_range
+
+              # variables used in view.
+              @movie_1 = reigning_champ
+          else
+              @movie_1 = relevant_movies.sample
+              @movie_2 = relevant_movies.sample
+              @comparison = Comparison.new
+          end
+
+      else
+        flash[:retry] = "Add some favorites before I curate your comparisons!"
+        redirect_to user_path(current_user)
+      end
    end
 
    def home
