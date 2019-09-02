@@ -38,8 +38,8 @@ class UsersController < ApplicationController
               # variables used in view.
               @movie_1 = reigning_champ
           else
-              @movie_1 = relevant_movies.sample
-              @movie_2 = relevant_movies.sample
+              @movie_1 = @user.relevant_movie_range.sample
+              @movie_2 = @user.relevant_movie_range.sample
               @comparison = Comparison.new
           end
 

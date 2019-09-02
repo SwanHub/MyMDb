@@ -81,22 +81,19 @@ class User < ApplicationRecord
     end
 
     def relevant_movie_range
-        # narrow down to usa movies
-        media_movies = Movie.all.select{|movie| movie.media_type == "movie"}
-        usa_movies = media_movies.select{|movie| movie.country == "USA"}
-
         # get average favorite rating & therefore relevant rating range.
         low = self.rating_range_low
         high = self.rating_range_high
-        relevant_movies = usa_movies.select{|movie| movie.imdbRating.between?(low, high)}
+        relevant_movies = Movie.all.select{|movie| movie.imdbRating.between?(low, high)}
 
         # sort relevant movies by votes then rating.
         sorted = relevant_movies.sort_by{|movie| [movie.imdbVotes, movie.imdbRating]}.reverse # sort by rating
-
-        # potential helper method:
-        # total_votes = sorted.reduce(0){|sum, movie| sum += movie.imdbVotes}
-        # average_votes = total_votes / sorted.count
-
     end
 
 end
+
+# potential future helper methods:
+# total_votes = sorted.reduce(0){|sum, movie| sum += movie.imdbVotes}
+# average_votes = total_votes / sorted.count
+# media_movies = Movie.all.select{|movie| movie.media_type == "movie"}
+# usa_movies = media_movies.select{|movie| movie.country == "USA"}
