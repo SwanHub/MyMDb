@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
         if @favorite.save
           redirect_to user_path(@user), flash: {notice: "You added #{Movie.find(params["movie"]["id"]).title} to favorites!"}
         else
-          redirect_to user_search_path(@user), flash: {alert: "No repeat favorites."}
+          redirect_to user_search_path(@user), flash: {alert: "I know you love that movie, but no duplicates!"}
         end
     end
 

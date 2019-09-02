@@ -22,22 +22,20 @@
    background-color: black;
  }
 
- .outer_body {
+ div.outer_body {
    text-align: center;
    justify-content: center;
    display: flex;
    background-color: black;
  }
 
- .inner_body {
+ div.inner_body {
    position: relative;
-   padding-bottom: 30px;
    width: 1008px;
+   min-height: 100vh;
    box-shadow: 0 0 100px hsl(50, 100%, 50%);
    color: white;
-   height: 100vh;
    background-color: black;
-   background-size:auto;
  }
 
  .alert {
