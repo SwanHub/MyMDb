@@ -36,7 +36,7 @@
    box-shadow: 0 0 100px hsl(50, 100%, 50%);
    color: white;
    height: 100vh;
-   background: url(https://i.ytimg.com/vi/yOKqsdWAJFA/maxresdefault.jpg) center center fixed;
+   background-color: black;
    background-size:auto;
  }
 
