@@ -58,6 +58,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password)
    end
 
-   # if we create a destroy method, include destroying all relevant comparisons... / favorites.
-
 end
