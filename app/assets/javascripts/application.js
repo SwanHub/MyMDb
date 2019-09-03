@@ -17,7 +17,7 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  const about = document.querySelector('h2#about')
+  about = document.querySelector('h2#about')
 
   about.addEventListener('click', function(){
 

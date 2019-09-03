@@ -1,7 +1,7 @@
 <br><%= form_for @favorite do |f|%>
   <input type="hidden" name="user[id]" value="<%=@user.id%>">
   <input type="hidden" name="movie[id]" value="<%=@movie.id%>">
-  <input class="add_to_favorites" type="submit" name="commit" value="Add to <%=@user.name%>'s Favorites">
+  <input class="add_to_favorites" type="submit" name="commit" value="Add to my Favorites">
 <% end %>
 
 <div class="show_movie_basics">
