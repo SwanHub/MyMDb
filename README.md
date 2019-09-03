@@ -1,24 +1,12 @@
-# README
+# MyMDb Movie Recommendation App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Deployed on Heroku here:
+* https://my-m-db.herokuapp.com
 
-Things you may want to cover:
+## Associated Medium Article Series:
 
-* Ruby version
+- This website's backend utilizes a many-to-many self-join within a triple join. The process of creating this schema is outlined in the blog series posted on Medium below:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Part 1:
+* Part 1: 
+* Part 1:
