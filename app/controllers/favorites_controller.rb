@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
     def create
         @user = current_user
 
-        if @user.movies <= 10
+        if @user.movies.count <= 10
 
           @favorite = Favorite.new(user_id: @user.id, movie_id: params["movie"]["id"])
           if @favorite.save
@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
           else
             redirect_to user_search_path(@user), flash: {alert: "I know you love that movie, but no duplicates!"}
           end
-          
+
         end
     end
 
