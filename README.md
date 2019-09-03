@@ -18,6 +18,6 @@
 
 - This website's backend utilizes a many-to-many self-join within a triple join. The process of creating this schema is outlined in the blog series posted on Medium below:
 
-* Part 1:
-* Part 1:
-* Part 1:
+* Part 1: [The Coddfather: Relational Database Fundamentals](https://medium.com/@jdprince555/the-coddfather-relational-database-fundamentals-533b96f87651)
+* Part 2: [Building Self-Joins and Triple-Joins in Ruby on Rails](https://medium.com/@jdprince555/building-self-joins-and-triple-joins-in-ruby-on-rails-455701bf3fa7)
+* Part 3: [Movie Comparison Website in Ruby on Rails](https://medium.com/@jdprince555/movie-comparison-website-in-ruby-on-rails-4632f2e1dee2)
