@@ -38,6 +38,14 @@
    background-color: black;
  }
 
+ .invisible {
+   display: none;
+ }
+
+ .visible {
+   display:block;
+ }
+
  .alert {
    background-color: #fff;
    color: red;
@@ -112,6 +120,18 @@ div.yield {
   text-decoration: underline;
   text-decoration-color: rgb(250, 199, 0);
 }
+
+#about {
+  padding: 40px;
+  cursor: pointer;
+}
+
+#about span:hover {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(255, 190, 0);
+}
+
+
 
 iframe {
   outline: 3px double rgb(250, 199, 0);

@@ -82,6 +82,10 @@ class User < ApplicationRecord
           sorted = relevant_movies.sort_by{|movie| [movie.imdbVotes, movie.imdbRating]}.reverse
     end
 
+    def get_4_recommendations
+        self.recommendation_relevant_movie_range.sample(4)
+    end
+
 #################### Comparison calculations
     def favorite_movie_ids
         self.movies.map {|movie| movie.id}

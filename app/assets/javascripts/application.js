@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  const about = document.querySelector('h2#about')
+
+  about.addEventListener('click', function(){
+
+    div = document.querySelector('.invisible')
+    div.className = 'visible'
+
+  })
+
+})

@@ -1,3 +1,32 @@
-<h1>Your Recommendations:</h1>
+<br><br>
+<h1>Voila!</h1>
 
-<h2>New Recommendations</h2>
+<h2>Four Recs Hot Off the Press:</h2>
+<br><br><br>
+<ul class="favorites_row">
+  <% @recommendations.each do |movie|%>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img class="favorites_column" src="<%=movie.poster_url%>" alt="<%=movie.title%>"><br>
+        </div>
+        <div class="flip-card-back">
+            <h2><%=movie.title%></h2><br>
+            <p><%=movie.year%></p>
+            <p><%=movie.rated%></p>
+            <p><%=movie.imdbRating%></p><br>
+            <p><%=movie.genre%></p>
+
+            <div class="favorites_link_wrapper">
+              <%= link_to "More details", movie_path(movie), class: "favorites_link"%>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</ul><br><br>
+<span class="user_link"><%= link_to "Get Four New Recs", recommendation_path(current_user) %></span>

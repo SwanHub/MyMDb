@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'users#home'
   get '/users/comparison/:id', to: 'users#comparison', as: 'comparison'
   get '/users/search/:id', to: 'users#search', as: 'user_search'
+  get '/users/recommendation/:id', to: 'users#recommendation', as: 'recommendation'
 
   ## movie routes
   resources :movies, only: [:index, :show]
