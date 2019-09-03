@@ -29,13 +29,22 @@ class UsersController < ApplicationController
 
       if @user.favorites.count > 0
         @comparison = Comparison.new
-        @movie_2 = @user.relevant_movie_range.sample
-
           # if the user has created comparisons... get the reigning champ
           if @user.comparisons.count > 0
-              @movie_1 = Movie.find(Comparison.last.superior_id)
+              @movie_1 = Movie.find(@user.comparisons.last.superior_id)
+
+              @movie_2 = @user.movies_by_genre_and_relevancy.sample
+              until @movie_2.id != @movie_1.id
+                    @movie_2 = @user.movies_by_genre_and_relevancy.sample
+              end
+
           else
-              @movie_1 = @user.relevant_movie_range.sample
+              @movie_1 = @user.movies_by_genre_and_relevancy.sample
+
+              @movie_2 = @user.movies_by_genre_and_relevancy.sample
+              until @movie_2.id != @movie_1.id
+                    @movie_2 = @user.movies_by_genre_and_relevancy.sample
+              end
           end
 
       else

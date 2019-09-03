@@ -22,4 +22,19 @@ Bugs We Found Today
         [x]Make the dropdown a clickable button that posts to comparisons
 
 Recommendation Function:
-  -
+        Part 1:
+        [x]Get unique array of movies compares.
+        [x]Get the number of times a movie is placed in the superior column.
+        [x]Bring those two arrays together...
+
+        Part 2:
+        [x]Get the top 1 of those movies (i.e. the reigning champ)
+        Average the stats of those movies based on the already-created functions
+        
+
+        Part 3:
+        Average the Comparisons against the Favorites...
+
+        Part 4:
+        Take that average and apply recommendation principles...
+        Reassess @ whiteboard to accomplish these tasks.
