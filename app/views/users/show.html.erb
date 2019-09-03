@@ -6,7 +6,9 @@
   <header>
     <%= link_to "Add Favorites", user_search_path, class: "user_links"%>
     <%= link_to "Compare Movies", comparison_path(current_user), class: "user_links"%>
-    <%= link_to "Get Recommendations!", recommendation_path(current_user), class: "user_links"%>
+    <% if @user.movies.count > 0 %>
+      <%= link_to "Get Recommendations!", recommendation_path(current_user), class: "user_links"%>
+    <% end %>
   </header>
 <% end %>
 

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
    end
 
    def recommendation
-      @user = User.find(params[:id])
+      @user = current_user
       @recommendations = current_user.get_4_recommendations
    end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
    def comparison
       @user = current_user
 
-      if @user.favorites.count > 0
+      if @user.movies.count > 0
         @comparison = Comparison.new
         @movie_2 = @user.movies_by_genre_and_relevancy.sample
 
